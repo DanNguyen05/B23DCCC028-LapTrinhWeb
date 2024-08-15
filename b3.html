@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b3</title>
+</head>
+<body>
+
+    <ul id="list">
+        <li>Mục 1</li>
+        <li>Mục 2</li>
+        <li>Mục 3</li>
+    </ul>
+
+    <script>
+        var newItem = document.createElement("li");
+        newItem.textContent = "Mục 4";
+        document.getElementById("list").appendChild(newItem);
+    </script>
+
+</body>
+</html>
