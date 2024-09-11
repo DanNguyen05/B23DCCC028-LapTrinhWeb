@@ -1,69 +1,23 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý Sinh viên</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input, select {
-            margin-right: 10px;
-            padding: 5px;
-        }
-        button {
-            padding: 5px 10px;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
+    <div id="root">
+    </div>
 
-<h2>Quản lý Sinh viên</h2>
+    <script>
+        const h1 = document.createElement('h1');
+        h1.innerText = "UDUer";
+        h1.id = 'heading-1';
+        h1.className = 'demo test';
+        h1.style.color = 'blue';
+        h1.style.backgroundColor = 'red';
+        console.dir(h1);
 
-<form id="formSinhVien">
-    <input type="text" id="maSinhVien" placeholder="Mã sinh viên" required>
-    <input type="text" id="hoTen" placeholder="Họ tên" required>
-    <select id="gioiTinh" required>
-        <option value="">Giới tính</option>
-        <option value="Nam">Nam</option>
-        <option value="Nữ">Nữ</option>
-    </select>
-    <input type="date" id="ngaySinh" placeholder="Ngày sinh" required>
-    <input type="text" id="queQuan" placeholder="Quê quán" required>
-    <button type="submit">Thêm sinh viên</button>
-</form>
-
-<table id="bangSinhVien">
-    <thead>
-        <tr>
-            <th>Mã sinh viên</th>
-            <th>Họ tên</th>
-            <th>Giới tính</th>
-            <th>Ngày sinh</th>
-            <th>Quê quán</th>
-            <th>Hành động</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-
-<script src="app.js"></script>
+        const root = document.getElementById('root');
+        root.appendChild(h1);
+    </script>
 </body>
 </html>
