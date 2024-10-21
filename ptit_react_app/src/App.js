@@ -11,14 +11,16 @@ function App() {
   const [newTask, setNewTask] = useState('');
   const [dueDate, setDueDate] = useState('');
 
+  // Hàm thêm công việc
   const addTask = () => {
     if (newTask && dueDate) {
-      setTasks([...tasks, { id: tasks.length + 1, text: newTask, due: dueDate }]);
+      setTasks([...tasks, { id: Date.now(), text: newTask, due: dueDate }]);
       setNewTask('');
       setDueDate('');
     }
   };
 
+  // Hàm xóa công việc
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
