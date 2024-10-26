@@ -65,7 +65,7 @@ h1 {
   background-color: #c0392b;
 }
 
-/* Add Task Section */
+
 .add-task {
   display: flex;
   justify-content: space-between;
@@ -107,7 +107,6 @@ h1 {
   background-color: #1f6395;
 }
 
-/* Media Query for Small Devices */
 @media (max-width: 480px) {
   .container {
     width: 90%;
@@ -128,4 +127,17 @@ h1 {
   .add-task button {
     padding: 8px 12px;
   }
+}
+
+.todo-item.completed {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+.todo-item.completed {
+  background-color: #dff0d8; /* Màu nền xanh nhạt cho task hoàn thành */
+  color: #3c763d; /* Màu chữ xanh đậm */
+}
+
+.todo-item.completed .due-date {
+  color: #3c763d; /* Màu cho ngày đến hạn khi task đã hoàn thành */
 }
