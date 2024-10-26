@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Example</title>
+</head>
+<body>
+    <h1>Ví dụ về Destructuring trong JavaScript</h1>
+    <div id="output"></div>
+
+    <script>
+        // Destructuring với Array
+        const colors = ["red", "green", "blue"];
+        const [firstColor, secondColor] = colors;
+
+        // Destructuring với Object
+        const car = {
+            brand: "Toyota",
+            model: "Camry",
+            year: 2022
+        };
+        const { brand, model } = car;
+
+        // Sử dụng Destructuring trong hàm
+        function displayUserInfo({ name, age }) {
+            return `Name: ${name}, Age: ${age}`;
+        }
+
+        const user = {
+            name: "Nguyễn Văn A",
+            age: 30
+        };
+
+        // Destructuring với giá trị mặc định
+        const user2 = {
+            name: "Trần Thị B",
+        };
+        const { name: name2, age: age2 = 25 } = user2;
+
+        // Đưa thông tin ra ngoài
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <h2>Thông tin màu sắc:</h2>
+            <p>Màu đầu tiên: ${firstColor}</p>
+            <p>Màu thứ hai: ${secondColor}</p>
+            <h2>Thông tin xe:</h2>
+            <p>Hãng: ${brand}</p>
+            <p>Model: ${model}</p>
+            <h2>Thông tin người dùng:</h2>
+            <p>${displayUserInfo(user)}</p>
+            <p>${name2} có tuổi: ${age2}</p>
+        `;
+    </script>
+</body>
+</html>
