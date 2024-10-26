@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Default Parameters Example</title>
+</head>
+<body>
+    <h1>Ví dụ về Tham số Mặc định trong JavaScript</h1>
+    <div id="output"></div>
+
+    <script>
+        // Gán mặc định tại vị trí khai báo
+        function multiply(a, b = 1) {
+            return a * b;
+        }
+
+        // Gán mặc định bên trong function
+        function member(name) {
+            name = name || "Guess"; // Sử dụng || để gán giá trị mặc định
+            return name;
+        }
+
+        // Gọi các hàm và lấy kết quả
+        const multiplyWithValues = multiply(5, 2); // output: 10
+        const multiplyWithDefault = multiply(5); // output: 5
+
+        const memberWithoutValue = member(); // output: "Guess"
+        const memberWithValue = member("Dương Minh Trí"); // output: "Dương Minh Trí"
+
+        // Đưa thông tin ra ngoài
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <h2>Kết quả của hàm multiply:</h2>
+            <p>multiply(5, 2) = ${multiplyWithValues}</p>
+            <p>multiply(5) = ${multiplyWithDefault}</p>
+            <h2>Kết quả của hàm member:</h2>
+            <p>member() = "${memberWithoutValue}"</p>
+            <p>member("Dương Minh Trí") = "${memberWithValue}"</p>
+        `;
+    </script>
+</body>
+</html>
