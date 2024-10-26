@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions Example</title>
+</head>
+<body>
+    <h1>Ví dụ về Arrow Functions trong JavaScript</h1>
+    <div id="output"></div>
+
+    <script>
+        // Ví dụ cơ bản về arrow function
+        const member = (name, age) => {
+            return `${name}, Age: ${age}`;
+        };
+
+        const memberSingleParam = name => {
+            return `Name: ${name}`;
+        };
+
+        const memberNoParam = () => {
+            return "Dương Minh Trí";
+        };
+
+        const getFirstElement = () => [1, 2, 3][0];
+
+        // Sử dụng destructuring với object
+        const user = {
+            name: "Nguyễn Văn A",
+            age: 30
+        };
+
+        const displayUserInfo = ({ name, age }) => {
+            return `Name: ${name}, Age: ${age}`;
+        };
+
+        // Đưa thông tin ra ngoài
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <h2>Thông tin thành viên:</h2>
+            <p>${member("Dương Minh Trí", 4)}</p>
+            <p>${memberSingleParam("Dương Minh Trí")}</p>
+            <p>${memberNoParam()}</p>
+            <h2>Thông tin người dùng:</h2>
+            <p>${displayUserInfo(user)}</p>
+            <p>Giá trị trả về từ arrow function (getFirstElement): ${getFirstElement()}</p>
+        `;
+    </script>
+</body>
+</html>
