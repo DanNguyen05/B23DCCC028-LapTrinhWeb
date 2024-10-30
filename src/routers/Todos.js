@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../configs/database');
 
-// Lấy tất cả các công việc (GET)
 router.get('/', (req, res) => {
     db.query('SELECT * FROM todos', (err, results) => {
         if (err) return res.status(500).send(err);
@@ -10,7 +9,6 @@ router.get('/', (req, res) => {
     });
 });
 
-// Tạo mới một công việc (POST)
 router.post('/', (req, res) => {
     const { title, description, due_date } = req.body;
     db.query('INSERT INTO todos (title, description, due_date) VALUES (?, ?, ?)', [title, description, due_date], (err, result) => {
@@ -18,7 +16,7 @@ router.post('/', (req, res) => {
         res.json({ id: result.insertId, title, description, due_date, completed: 0});
     });
 });
-// Cập nhật công việc theo ID (PUT)
+
 router.put('/:id', (req, res) => {
     const { title, description, due_date, completed } = req.body;
     const { id } = req.params;
